@@ -2,7 +2,7 @@ import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Icons } from "./Icons";
 import NavItems from "./NavItems";
-import { Menu, X, ShoppingCart, Heart } from "lucide-react";
+import { Menu, X, ShoppingCart, Heart, Search } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -10,33 +10,42 @@ export default function Navbar() {
       <header className="bg-white relative">
         <MaxWidthWrapper>
           <div className="border-b border-gray-200">
-            <div className="flex justify-between text-center h-16">
-              {/* mobile menu */}
+            <div className="flex items-center h-16">
+              <div className="ml-2 lg:hidden">
+                <Menu />
+                <X className="hidden" />
+              </div>
 
-              <div className="ml-4 flex  lg:ml-0">
-                <Link
-                  href="/"
-                  className="flex justify-center items-center gap-2"
-                >
-                  <Icons.Logo className="h-10 w-10 text-blue-950" />
-                  <p className="text-lg tracking-widest font-bold">
-                    City Hunter
-                  </p>
+              <div className=" flex ml-4 lg:ml-0">
+                <Link href="/">
+                  <Icons.Logo1 className="h-10 " />
                 </Link>
               </div>
-              <div className="hidden lg:ml-8 lg:block lg:self-stretch z-50">
+              <div className="hidden z-50 lg:ml-8 lg:self-stretch lg:block">
                 <NavItems />
               </div>
-              <div className="flex justify-center items-center gap-6">
-                <div className=" relative flex gap-6 text-muted-foreground">
-                  <Heart />
-                  <span className="w-4 h-4 absolute left-4 top-[-2px] bg-slate-400 text-white text-xs rounded-full">0</span>
-                  <ShoppingCart />
-                  <span className="w-4 h-4 absolute left-16 top-[-2px] bg-slate-400 text-white text-xs rounded-full">8</span>
-                </div>
-                <div>
-                  <Menu />
-                  <X className="hidden"/>
+              <div className="ml-auto flex items-center">
+                <div className="flex ">
+                  <Search className="cursor-pointer hover:text-slate-400" />
+
+                  <Link
+                    href="#"
+                    className="relative cursor-pointer hover:text-slate-400 "
+                  >
+                    <Heart />
+                    <span className="w-4 h-4 absolute left-4 bottom-3.5 bg-slate-400 text-white text-xs rounded-full">
+                      0
+                    </span>
+                  </Link>
+                  <Link
+                    href="#"
+                    className="relative cursor-pointer hover:text-slate-400"
+                  >
+                    <ShoppingCart />
+                    <span className="w-4 h-4 absolute left-4 bottom-3.5 bg-slate-400 text-blue-50 text-xs rounded-full">
+                      7
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>

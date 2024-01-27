@@ -16,13 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
+  return (   
     <html lang="en">
       <body
         className={cn("relative h-full font-sans antialiased", inter.className)}
       >
-        <Navbar/>
-        <main className="relative flex flex-col min-h-screen">{children}</main>
+        <main className="relative flex flex-col min-h-screen">
+          <Navbar />
+          {children}
+        </main>
       </body>
     </html>
   );
