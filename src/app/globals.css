@@ -3,6 +3,13 @@
 @tailwind utilities;
  
 
+.space_mono{
+  font-family: var(--font-space_mono);
+}
+.inter{
+  font-family: var(--font-inter);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -49,6 +56,7 @@
     --ring: 212.7 26.8% 83.9;
   }
 }
+
 
 @layer base {
   * {

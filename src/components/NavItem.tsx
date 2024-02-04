@@ -35,10 +35,10 @@ export default function NavItem({
           })}
         >
           <div
-            className="absolute inset-0 top-0 bg-white shadow"
-            aria-hidden="true"
+            className="absolute -inset-[2px] dark:-inset-[1.3px] top-full dark:top-full bg-white dark:bg-black  shadow"
+            aria-hidden="true"  
           />
-          <div className="relative bg-slate-50">
+          <div className="relative bg-white dark:bg-slate-950">
               <div className="flex pt-5  gap-10  px-10 h-16">
                 {category.featured.map((item) => (
                   <div className=" group relative text-base sm:text-sm">
